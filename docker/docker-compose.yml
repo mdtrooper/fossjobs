@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  fossjobs_php:
+     image: php:7.0-apache
+     restart: always
+     ports:
+       - 8080:80
+     volumes:
+       - ..:/var/www/html
+       - /var/www/html/docker
+       - ./config.php:/var/www/html/core/config.php
+     links:
+       - ugamela_db
+
+  fossjobs_db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fossjobs
+    ports:
+      - 3306:3306
+    volumes:
+      - ../install:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
+    driver: local
