@@ -7,11 +7,9 @@ services:
      ports:
        - 8080:80
      volumes:
-       - ..:/var/www/html
-       - /var/www/html/docker
-       - ./config.php:/var/www/html/core/config.php
+       - ../public:/var/www/html
      links:
-       - ugamela_db
+       - fossjobs_db
 
   fossjobs_db:
     image: mariadb
