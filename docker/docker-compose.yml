@@ -2,7 +2,10 @@ version: '3.5'
 
 services:
   fossjobs_php:
-     image: php:7.0-apache
+     container_name: fossjobs_php
+     build:
+        context: .
+        dockerfile: Dockerfile-php
      restart: always
      ports:
        - 8080:80
@@ -12,6 +15,7 @@ services:
        - fossjobs_db
 
   fossjobs_db:
+    container_name: fossjobs_db
     image: mariadb
     restart: always
     environment:
