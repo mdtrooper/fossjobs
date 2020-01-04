@@ -6,13 +6,13 @@
 // local
 $__instances['local'] = array(
 	// The prefix should be a unique part of the url (not including protocol name or auth info; see below).
-	'prefix' => 'jobberbase.local',
+	'prefix' => '127.0.0.1:8080',
 	// mysql credentials
-	'db_host' => 'localhost',
+	'db_host' => 'fossjobs_db',
 	'db_port' => 3306,
 	'db_user' => 'root',
 	'db_password' => 'root',
-	'db_name' => 'jobberbase',
+	'db_name' => 'fossjobs',
 	'db_prefix' => '',
 	// your site's full url
 	'app_url' => 'http://127.0.0.1:8080/',
