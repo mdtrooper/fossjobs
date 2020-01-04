@@ -11,6 +11,7 @@ services:
        - 8080:80
      volumes:
        - ../public:/var/www/html
+       - ../docker/docker.config.envs.php:/var/www/html/_config/config.envs.php
      links:
        - fossjobs_db
 
@@ -24,7 +25,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ../install:/docker-entrypoint-initdb.d
+      - ../db:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
 volumes:
   db_data:
