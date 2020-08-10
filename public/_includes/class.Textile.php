@@ -233,7 +233,7 @@ class Textile
 	var $doc_root;
 
 // -------------------------------------------------------------
-	function Textile()
+	public function __construct()
 	{
 		$this->hlgn = "(?:\<(?!>)|(?<!<)\>|\<\>|\=|[()]+(?! ))";
 		$this->vlgn = "[\-^~]";
